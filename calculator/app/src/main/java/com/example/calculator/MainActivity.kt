@@ -40,12 +40,11 @@ class MainActivity : ComponentActivity() {
                 }) {
                     Text("1")
                 }
-
-                Button(onClick = {
-                    calculationText += "2"
-                }) {
-                    Text("2")
-                }
+//                Button(onClick = {
+//                    calculationText += "2"
+//                }) {
+//                    Text("2")
+//                }
             }
 
         }

@@ -41,8 +41,6 @@ fun IdeaGenerator() {
         mutableStateOf(mutableStateListOf(""))
     }
 
-    //ideas.removeAt(0)
-
     var idea by remember {
         mutableStateOf("")
     }

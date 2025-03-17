@@ -6,11 +6,14 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -25,10 +28,26 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            ApplicationNoMVVM()
+            //ApplicationNoMVVM()
+
+            var list = remember {
+                mutableStateListOf("asd")
+            }
+
+            Button(onClick = {
+                list.add("aaaa")
+            }) { }
+
+            LazyColumn {
+                items(list) {
+                    Text(it)
+                }
+            }
         }
     }
 }
+
+
 
 @Composable
 fun ApplicationMVVM() {
